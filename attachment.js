@@ -28,6 +28,7 @@ client.on("message" , message => {
     console.log(path)
     const attachment = new MessageAttachment(path)
     message.channel.send(attachment)
+    }
     if (message.content.startsWith('¥짤')) {
         const args = message.content.split(' ').slice(1)
         var no = args.join(' ')
@@ -40,7 +41,6 @@ client.on("message" , message => {
     console.log(path)
     const attachment = new MessageAttachment(path)
     message.channel.send(attachment)
-    }
     }
 })
 client.login(config.token)
