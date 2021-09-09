@@ -28,6 +28,19 @@ client.on("message" , message => {
     console.log(path)
     const attachment = new MessageAttachment(path)
     message.channel.send(attachment)
+    if (message.content.startsWith('¥짤')) {
+        const args = message.content.split(' ').slice(1)
+        var no = args.join(' ')
+
+        if (!no) no ='1'
+        if (isNaN(no) || no > 20) return message.reply('1부터 20까지의 숫자만 되요!')
+    
+    var path = "./gif"
+    path = path.concat(no, ".gif")
+    console.log(path)
+    const attachment = new MessageAttachment(path)
+    message.channel.send(attachment)
+    }
     }
 })
 client.login(config.token)
